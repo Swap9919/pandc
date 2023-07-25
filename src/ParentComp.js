@@ -20,6 +20,12 @@ const ParentComp = () => {
             // Handle the form submission logic here, using the formState data.
             // For this example, we are just logging the form data.
             console.log('Form submitted:', formState);
+
+            setFormState({
+                  firstName: '',
+                  lastName: '',
+                  email: '',
+            });
       };
 
       return (
@@ -39,8 +45,7 @@ const ParentComp = () => {
                               <input type="email" name="email" value={formState.email} onChange={handleInputChange} />
                         </div>
                   </form>
-                  {/* Pass the submit function to the child component */}
-                  <ChildComp onSubmit={handleFormSubmit} />
+                  <ChildComp onSubmit={handleFormSubmit} /> 
             </div>
       );
 };
